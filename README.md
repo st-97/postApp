@@ -1,7 +1,12 @@
 PostsApp
 
 A modern iOS application built using UIKit, MVVM, and Coordinator architecture, featuring Posts, Favorites, Authentication, and offline-first support using Realm with reactive programming powered by RxSwift.
+##  Environment
 
+- 🛠 Xcode Version: 26.4.1 (17E202)
+- 💻 macOS Version: 26.2 (25C56)
+- 📱 Tested Device: iPhone 17 Pro
+- 📱 iOS Version: 26.4.1
 ------------------------------------------------------------
 FEATURES
 ------------------------------------------------------------

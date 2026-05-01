@@ -170,9 +170,8 @@ HIGHLIGHTS
 
 - Clean scalable architecture
 - Fully reactive UI updates
-- Offline-first support
+- Offline support
 - Modular design
-- Production-ready structure
 - Separation of concerns (UI / Logic / Data)
 
 ------------------------------------------------------------
@@ -180,8 +179,6 @@ TESTING
 ------------------------------------------------------------
 
 - Unit Tests (PostsAppTests)
-- UI Tests (PostsAppUITests)
-- Launch Tests
 
 ------------------------------------------------------------
 AUTHOR

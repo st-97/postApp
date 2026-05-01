@@ -119,22 +119,16 @@ final class PostRepository: PostRepositoryProtocol {
         }
     }
     func removeFavorite(postId: Int) -> Completable {
-        Completable.create { observer in
-            DispatchQueue.global(qos: .userInitiated).async {
+        return Completable.create { observer in
+            DispatchQueue.global(qos: .utility).async {
                 autoreleasepool {
                     do {
-                        let realm = try RealmProvider.realm()
-
-                        guard let post = realm.object(ofType: PostObject.self,
-                                                      forPrimaryKey: postId) else {
-                            observer(.error(RepositoryError.objectNotFound))
-                            return
-                        }
-
+                        let realm = try Realm()
                         try realm.write {
-                            post.isFavorite = false
+                            if let object = realm.object(ofType: PostObject.self, forPrimaryKey: postId) {
+                                realm.delete(object)
+                            }
                         }
-
                         observer(.completed)
                     } catch {
                         observer(.error(error))
